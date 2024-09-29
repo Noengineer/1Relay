@@ -19,7 +19,7 @@ void ota_handle( void * parameter ) {
 }
 #endif
 
-void setupOTA(const char* nameprefix, const char* mySSID, const char* myPASSWORD) {
+void setupOTA(const char* nameprefix, const char* ssid, const char* password) {
   // Configure the hostname
   uint16_t maxlen = strlen(nameprefix) + 7;
   char *fullhostname = new char[maxlen];
@@ -31,7 +31,7 @@ void setupOTA(const char* nameprefix, const char* mySSID, const char* myPASSWORD
 
   // Configure and start the WiFi station
   WiFi.mode(WIFI_STA);
-  WiFi.begin(mySSID, myPASSWORD);
+  WiFi.begin(ssid, password);
 
   // Wait for connection
   while (WiFi.waitForConnectResult() != WL_CONNECTED) {
