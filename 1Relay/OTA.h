@@ -19,6 +19,9 @@ void ota_handle( void * parameter ) {
 }
 #endif
 
+const char* ssid = mySSID;
+const char* password = myPASSWORD;
+
 void setupOTA(const char* nameprefix, const char* ssid, const char* password) {
   // Configure the hostname
   uint16_t maxlen = strlen(nameprefix) + 7;
